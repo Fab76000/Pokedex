@@ -4,10 +4,8 @@ const searchInput = document.querySelector('.recherche-poke input');
 const listePoke = document.querySelector('.liste-poke');
 const chargement = document.querySelector('.loader');
 
-
-
 const types = {
-    grass: '#78c850',
+        grass: '#78c850',
 	ground: '#E2BF65',
 	dragon: '#6F35FC',
 	fire: '#F58271',
@@ -20,9 +18,9 @@ const types = {
 	psychic: '#F95587',
 	flying: '#A98FF3',
 	fighting: '#C25956',
-    rock: '#B6A136',
-    ghost: '#735797',
-    ice: '#96D9D6'
+        rock: '#B6A136',
+        ghost: '#735797',
+        ice: '#96D9D6'
 }
 
 
@@ -35,9 +33,7 @@ function fetchPokemonBase(){
             allPoke.results.forEach((pokemon) => {
                 fetchPokemonComplet(pokemon);
             })
-
         })
-
 }
 
 fetchPokemonBase();
@@ -56,8 +52,6 @@ function fetchPokemonComplet(pokemon) {
         objPokemonFull.type = pokeData.types[0].type.name;
         objPokemonFull.id = pokeData.id;
 		
-
-
         fetch(`https://pokeapi.co/api/v2/pokemon-species/${nameP}`)
         .then(reponse => reponse.json())
         .then((pokeData)) => {
@@ -101,7 +95,7 @@ function createCard(arr){
         idCarte.innerText = `ID# ${arr[i].id}`;
         const imgCarte = document.createElement('img');
         imgCarte.src = arr[i].pic;
-		const poke_types = pokemon.types.map(el=> el.type.name);
+	const poke_types = pokemon.types.map(el=> el.type.name);
 
         carte.appendChild(imgCarte);
         carte.appendChild(txtCarte);
@@ -175,8 +169,6 @@ function recherche(){
     }
 
 }
-
-
 
 
 // Animation Input

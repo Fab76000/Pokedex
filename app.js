@@ -34,7 +34,6 @@ function fetchPokemonBase() {
             allPoke.results.forEach((pokemon) => {
                 fetchPokemonComplet(pokemon);
             })
-
         })
 }
 
@@ -174,8 +173,6 @@ function recherche() {
     }
 
 }
-
-
 
 
 // Animation Input
